@@ -12,7 +12,11 @@ def getWFSlot(productUrl):
        'User-Agent': 'Mozilla/5.0 (Windows NT 6.1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/41.0.2228.0 Safari/537.36',
    }
 
-   driver = webdriver.Chrome()
+   opts = webdriver.ChromeOptions()
+   opts.add_experimental_option("detach", True)
+   #opts.add_argument("user-data-dir=/Users/br/Library/Application Support/Google/Chrome/")
+   
+   driver = webdriver.Chrome(chrome_options=opts)
    driver.get(productUrl)           
    html = driver.page_source
    soup = bs4.BeautifulSoup(html, "html.parser")
@@ -43,9 +47,9 @@ def getWFSlot(productUrl):
          if no_slot_pattern == soup.find('h4', class_ ='a-alert-heading').text:
             print("NO SLOTS!")
       except AttributeError: 
-            print('SLOTS OPEN 3!')
-            os.system('say "Slots for delivery opened!"')
-            no_open_slots = False
+         print('SLOTS OPEN 3!')
+         os.system('say "Slots for delivery opened!"')
+         no_open_slots = False
 
 
       slot_patterns = ['Next available', '1-hour delivery windows', '2-hour delivery windows']
