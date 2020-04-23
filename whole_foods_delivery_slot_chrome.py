@@ -1,5 +1,6 @@
 import bs4
 
+import chromedriver_binary
 from selenium import webdriver
 
 import sys

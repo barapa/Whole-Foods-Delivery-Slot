@@ -6,11 +6,11 @@ authors = ["Benjamin Rapaport <benjamin.rapaport@gmail.com>"]
 
 [tool.poetry.dependencies]
 python = "^2.7"
-chromedriver-binary = "^81.0.4044.69.0"
 beautifulsoup4 = "^4.8.2"
 webdriver-manager = "^2.3.0"
 selenium = "^3.141.0"
 urllib3 = "^1.25.8"
+chromedriver-binary = "^83.0.4103"
 
 [tool.poetry.dev-dependencies]
 
